@@ -8,10 +8,10 @@ from django.contrib.auth.models import User
 class Fotografia(models.Model):
 
     categoria_lista = [
-        ("Nebulosa", "NEBULOSA"),
-        ("Estrela", "ESTRELA"),
-        ("Galáxia", "GALÁXIA"),
-        ("Planeta", "PLANETA")
+        ("Nebulosa", "Nebulosa"),
+        ("Estrela", "Estrela"),
+        ("Galáxia", "Galáxia"),
+        ("Planeta", "Planeta")
     ]
 
     nome = models.CharField(max_length=100, null=False, blank=False)
@@ -19,7 +19,7 @@ class Fotografia(models.Model):
     categoria = models.CharField(max_length=150, choices=categoria_lista, default='')
     descricao = models.TextField(null=False, blank=False)
     foto = models.ImageField(upload_to='fotos/%Y/%m/%d/', blank=True)
-    publicada = models.BooleanField(default=False)
+    publicada = models.BooleanField(default=True)
     data_fotografia = models.DateTimeField(default=datetime.now, blank = False)
     usuario = models.ForeignKey(
         to=User,

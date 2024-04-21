@@ -2,26 +2,6 @@
 {% load static %}
 {% block content %}
 
-
-    <div class="pagina-inicial">
-        <header class="cabecalho">
-            <img src="{% static '/assets/logo/Logo(2).png' %}" alt="Logo da Alura Space" />
-            <div class="cabecalho__busca">
-                <div class="busca__fundo">
-                    <input class="busca__input" type="text" placeholder="O que você procura?">
-                    <img class="busca__icone" src="{% static '/assets/ícones/1x/search.png' %}" alt="ícone de search">
-                </div>
-            </div>
-        </header>
-        <main class="principal">
-            <section class="menu-lateral">
-                <nav class="menu-lateral__navegacao">
-                    <a href="{% url 'index'%}"><img src="{% static '/assets/ícones/1x/Home - ativo.png' %}"> Home</a>
-                    <a href="#"><img src="{% static '/assets/ícones/1x/Mais vistas - inativo.png' %}"> Mais vistas</a>
-                    <a href="#"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Novas</a>
-                    <a href="#"><img src="{% static '/assets/ícones/1x/Surpreenda-me - inativo.png' %}"> Surpreenda-me</a>
-                </nav>
-            </section>
             <section class="conteudo">
                 <section class="imagem">
                     <div class="imagem__conteudo">
@@ -35,6 +15,10 @@
                                 <p class="imagem__titulo">{{ fotografia.nome }}</p>
                                 <p class="imagem__descricao">{{ fotografia.legenda }}</p>
                                 <p class="imagem__texto"><p>
+                            </div>
+                            <div>
+                                <a href="{% url 'editar_imagem' %}"><button class="btn btn-success col-12" style="padding: top 5px;">Editar</button></a>
+                                <a href="{% url 'deletar_imagem' %}"><button class="btn btn-danger col-12" style="padding: top 5px;">Deletar</button></a>
                             </div>
                         </div>
                     </div>
